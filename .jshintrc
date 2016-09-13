@@ -1,0 +1,26 @@
+{
+  "bitwise": true,
+  "latedef": false,
+  "loopfunc": true,
+  "browser": true,
+  "unused": false,
+  "curly": true,
+  "eqeqeq": true,
+  "esnext": true,
+  "noarg": true,
+  "node": true,
+  "strict": true,
+  "undef": true,
+  "laxcomma":true,
+  "shadow":true,
+  "globals": {
+    "angular": false,
+    "adminApp": true,
+    "phoneUtils": true,
+    "$": true,
+    "browser": false,
+    "by": false,
+    "bootbox":true
+  }
+}
+
