@@ -5,43 +5,24 @@ class Keys extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: [{
-                component: 'First...',
-                id: 1
-            },
-
-                {
-                    component: 'Second...',
-                    id: 2
-                },
-
-                {
-                    component: 'Third...',
-                    id: 3
-                }]
+            data: [
+                {component: 'First...', id: 1},
+                {component: 'Second...', id: 2},
+                {component: 'Third...', id: 3},
+                {component: 'rapapa', id: 3}
+            ]
         };
+    }
 
-        this.updateState = this.updateState.bind(this);
-        this.updateStateChild = this.updateStateChild.bind(this);
-        this.clearInput = this.clearInput.bind(this);
-    }
-    updateState(e) {
-        this.setState({data: e.target.value});
-    }
-    clearInput() {
-        this.setState({data:''});
-        ReactDOM.findDOMNode(this.refs.myInput).focus();
-    }
-    updateStateChild(e) {
-        this.setState({data: 'data updated from child!!!'});
-    }
     render() {
         return (
             <div>
                 <h1>Keys son</h1>
-                <input type="text" value = {this.state.data} onChange = {this.updateState} ref="myInput"/>
-                <button onClick = {this.clearInput}>Clear patna</button>
-                <p>{this.state.data}</p>
+                {
+                    this.state.data.map(
+                        (dynamicComponent, i) => <Content key={i} componentData={dynamicComponent}/>
+                    )
+                }
             </div>
         )
     }
@@ -52,7 +33,8 @@ class Content extends React.Component {
         return (
             <div>
                 <ul>
-                    <li>{}</li>
+                    <li>{this.props.componentData.component}</li>
+                    <li>{this.props.componentData.id}</li>
                 </ul>
             </div>
         )
