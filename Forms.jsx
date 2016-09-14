@@ -33,7 +33,6 @@ class Content extends React.Component {
                 <input type="text"
                        value = {this.props.myDataProp}
                        onChange={this.props.updateStateProp}
-                       {{/*updating from child*/}}
                 />
                 <h3>{this.props.myDataProp}</h3>
             </div>
